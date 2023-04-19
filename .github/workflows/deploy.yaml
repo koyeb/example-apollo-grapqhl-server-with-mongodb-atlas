@@ -14,11 +14,21 @@ jobs:
       cancel-in-progress: true
     runs-on: ubuntu-latest
     steps:
+      - name: Install and configure the Koyeb CLI
+        uses: koyeb-community/install-koyeb-cli@v2
+        with:
+          api_token: "${{ secrets.KOYEB_EXAMPLES_APPS_TOKEN }}"
+
+      - name: Create application secret
+        uses: koyeb/action-git-deploy/secret@v1
+        with:
+          secret-name: APLO_GQL_MGO_MONGO_URL
+          secret-value: "${{ secrets.MONGO_URL }}"
+
       - name: Build and deploy the application
         uses: koyeb/action-git-deploy@v1
         with:
           app-name: aplo-gql-mgo-${{ github.ref_name }}
-          api-token: "${{ secrets.KOYEB_EXAMPLES_APPS_TOKEN }}"
-          service-env: "MONGODB_URI=${{ secrets.MONGO_URL }}"
+          service-env: "MONGODB_URI=@APLO_GQL_MGO_MONGO_URL"
           service-ports: "4000:http"
           service-routes: "/:4000"
