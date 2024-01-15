@@ -32,3 +32,4 @@ jobs:
           service-env: "MONGODB_URI=@APLO_GQL_MGO_MONGO_URL"
           service-ports: "4000:http"
           service-routes: "/:4000"
+          skip-cache: true
