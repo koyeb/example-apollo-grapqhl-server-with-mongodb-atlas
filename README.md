@@ -49,14 +49,13 @@ If you want to customize and enhance this application, you need to fork this rep
 If you used the **Deploy to Koyeb** button, you can simply link your service to your forked repository to be able to push changes.
 Alternatively, you can manually create the application as described below.
 
-On the [Koyeb Control Panel](//app.koyeb.com/apps), click the **Create App** button to go to the App creation page.
+On the [Koyeb Control Panel](//app.koyeb.com/apps), on the **Overview** tab, click the **Create Web Service** button to begin.
 
-1. Select `GitHub` as the deployment method to use
-2. In the repositories list, select the repository you just forked
-3. Specify the branch to deploy, in this case `main`
-4. In the environment variables section, click the add environment variable button. Select the Secret type, enter MONGODB_URI as the key and for the value, select `Create Secret`. Put MONGODB_URI as the name and then put the value to your MongoDB connection string. Read [this tutorial](//www.koyeb.com/tutorials/deploy-a-graphql-api-with-mongodb-atlas-and-apollo-server-on-koyeb) for more information.
-5. Add a plaintext environment variable with the key PORT and value 8080.
-6. Then, give your App a name, i.e `graphql-api-on-koyeb`, and click **Create App**.
+1. Select **GitHub** as the deployment method.
+2. In the repositories list, select the repository you just forked.
+3. In the **Environment variables** section, click **Add variable**. Select the **Secret** type, enter `MONGODB_URI` as the key, and for the value, select `Create Secret`. Put `MONGODB_URI` as the name and then put the value to your MongoDB connection string. Read [this tutorial](//www.koyeb.com/tutorials/deploy-a-graphql-api-with-mongodb-atlas-and-apollo-server-on-koyeb) for more information.
+4. Click **Add variable** again and add a plaintext `PORT` variable set to 8080.
+5. Choose a name for your App and Service, i.e `graphql-api-on-koyeb`, and click **Deploy**.
 
 You land on the deployment page where you can follow the build of your application. Once the build is completed, your application is being deployed and you will be able to access it via `<YOUR_APP_NAME>-<YOUR_ORG_NAME>.koyeb.app`.
 
