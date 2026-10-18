@@ -18,7 +18,7 @@
     "apollo-server": "^3.6.3",
     "dotenv": "^16.0.0",
     "graphql": "^15.8.0",
-    "mongoose": "^6.2.2",
+    "mongoose": "^6.12.0",
     "rimraf": "^3.0.2"
   },
   "devDependencies": {
